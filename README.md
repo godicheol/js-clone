@@ -1,28 +1,38 @@
 ## Usage
 
-```console
-git clone https://github.com/godicheol/javascript-module-builder.git && cd javascript-module-builder && npm install && npm run unlink
-```
-
 ```js
-// package.json
-...
-"bundleDependencies": [
-    // add installed library name
-]
-...
-```
+var obj = {
+    name: "James",
+    age: 1,
+    images: [1, 2, "g", "c"],
+    attrs: [
+        {
+            width: 10,
+            height: 10,
+        }, {
+            width: 100,
+            height: 100,
+        }, {
+            width: {
+                value: 10
+            },
+            height: {
+                value: 10
+            }
+        }
+    ],
+    deep1: {
+        deep2: {
+            deep3: {
+                deep4: {
+                    deep5: {
+                        value: 100
+                    }
+                }
+            }
+        }
+    }
+}
 
-```console
-npm pack
-```
-
-```console
-npm install blah-blah.tgz
-```
-
-```js
-import MyModule from 'javascript-module-builder';
-const {sum} = MyModule;
-sum(1, 2); // 3
+jsClone.exec(obj); // return { ... }
 ```
