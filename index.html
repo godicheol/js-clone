@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        html,body,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li,table,thead,tbody,tr,th,td,img,canvas{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input,textarea,label{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="./index.js"></script>
+    <script>
+        var { exec } = jsClone;
+
+        var obj = {
+            name: "James",
+            age: 1,
+            images: [
+                1, 2, "g", "c",
+            ],
+            attrs: [
+                {
+                    width: 10,
+                    height: 10,
+                }, {
+                    width: 100,
+                    height: 100,
+                }, {
+                    width: {
+                        value: 10
+                    },
+                    height: {
+                        value: 10
+                    }
+                }
+            ],
+            deep1: {
+                deep2: {
+                    deep3: {
+                        deep4: {
+                            deep5: {
+                                value: 100
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        var obj2 = exec(obj);
+
+        obj2.age = 2;
+        obj2.images[0] = 100;
+        obj2.attrs[0].width = 100;
+
+        console.log(obj);
+        console.log(obj2);
+    </script>
+</body>
+
+</html>
